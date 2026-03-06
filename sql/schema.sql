@@ -1,4 +1,4 @@
-sql-- FinanceIQ Schema
+-- FinanceIQ Schema
 -- Dimension Tables
 
 CREATE TABLE dim_date (
@@ -37,7 +37,7 @@ CREATE TABLE fact_transaction (
     costcenter_id INT,
     amount DECIMAL(18, 2),
     currency VARCHAR(10),
-    transaction_type VARCHAR(20) CHECK (transaction_type IN ('actual', 'budget'),
+    transaction_type VARCHAR(20) CHECK (transaction_type IN ('actual', 'budget')),
     description TEXT,
     FOREIGN KEY (date_id) REFERENCES dim_date(date_id),
     FOREIGN KEY (account_id) REFERENCES dim_account(account_id),
